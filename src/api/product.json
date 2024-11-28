@@ -1,0 +1,17 @@
+[
+    {
+        "id": 0,
+        "image": "https://www.transparentpng.com/thumb/apple-iphone/fORwQR-smartphone-apple-iphone-x-transparent-background.png",
+        "title": "IPhone"
+    },
+    {
+        "id": 1,
+        "image": "https://images.samsung.com/is/image/samsung/p6pim/sg/2202/gallery/sg-galaxy-a53-5g-a536-sm-a536elbgxsp-thumb-531405024?$320_320_PNG$",
+        "title": "Samsung"
+    },
+    {
+        "id": 2,
+        "image": "https://d316acfc88wber.cloudfront.net/global/phones/spark8T/SPARK8T-blue.png",
+        "title": "Lenovo"
+    }
+]
