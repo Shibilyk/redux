@@ -15,8 +15,7 @@ const Product = () => {
         <div className='product-container' key={key}>
           <img src={product?.image} alt="not found" />
           <h3>{product?.title}</h3>
-          <BeforeCart addToCart={addToCart}/>
-          <AfterCartbtn />
+          {count>0 ?<AfterCartbtn/>:<BeforeCart addToCart={addToCart}/>}
         </div>
       ))}
     </section>
