@@ -19,7 +19,8 @@ const Product = () => {
         </div>
       ))}
     </section>
-  );
+
+  );  
 };
 
 export default Product;
