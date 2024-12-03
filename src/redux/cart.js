@@ -9,7 +9,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    adToCart: (state) => {
+    addToCart: (state) => {
       state.cartCount = 1;
     },
     increment: (state) => {
@@ -20,3 +20,6 @@ const cartSlice = createSlice({
     },
   },
 });
+ 
+export const { increment, decrement, addToCart} = cartSlice.actions;
+export default cartSlice.reducer;
