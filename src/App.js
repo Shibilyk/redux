@@ -1,14 +1,12 @@
 import { Fragment } from "react";
-import Product from "./conponents/Product/ProductList";
-import Header from "./conponents/Header/Header";
-
+import { ProductList, Header } from "./conponents";
 
 function App() {
   return (
-   <Fragment>
-    <Header/>
-    <Product/>
-   </Fragment>
+    <Fragment>
+      <Header />
+      <ProductList />
+    </Fragment>
   );
 }
 
