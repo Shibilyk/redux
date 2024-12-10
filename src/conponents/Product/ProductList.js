@@ -1,21 +1,18 @@
 import product from "../../api/product.json";
-import AfterCartbtn from "../Header/CartButtons/afterCarbtn";
-import BeforeCart from "../Header/CartButtons/beforeCart";
+import CartButtons from "../Header/CartButtons";
+
 import "./ProductList.css";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const Product = () => {
-  const { cartCount,cartList } = useSelector((state) => state.cart);
-  console.log(cartList);
-  
-  
+  // const { cartList } = useSelector((state) => state.cart);
   return (
     <section className="container">
       {product.map((product, key) => (
         <div className="product-container" key={key}>
           <img src={product?.image} alt="not found" />
           <h3>{product?.title}</h3>
-          {cartCount > 0 ? <AfterCartbtn /> : <BeforeCart product={product} />}
+          <CartButtons />
         </div>
       ))}
     </section>

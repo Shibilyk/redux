@@ -1,11 +1,10 @@
 import React from "react";
 import { increment, decrement } from "../../../redux/cart";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./cart-button.css";
 
-const AfterCarbtn = () => {
+const AfterCarbtn = ({product,cartCount}) => {
   const dispatch = useDispatch();
-  const { cartCount } = useSelector((state) => state.cart);
   return (
     <div className="after-cart">
       <button
