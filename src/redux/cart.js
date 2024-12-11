@@ -11,13 +11,29 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, actions) => {
       state.cartList.push({ ...actions.payload, count: 1 });
-      // state.cartCount = 1;
     },
-    increment: (state) => {
-      state.cartCount += 1;
+    increment: (state, actions) => {
+      const productID = actions.payload;
+      state.cartList.forEach((item) => {
+        if (item?.id === productID) {
+          item.count++;
+        }
+      });
     },
-    decrement: (state) => {
-      state.cartCount -= 1;
+    decrement: (state, action) => {
+      const productID = action.payload;
+      const itemIndex = state.cartList.findIndex(
+        (item) => item?.id === productID
+      );
+
+      if (itemIndex !== -1) {
+        const item = state.cartList[itemIndex];
+        item.count--;
+
+        if (item.count === 0) {
+          state.cartList.splice(itemIndex, 1);
+        }
+      }
     },
   },
 });
