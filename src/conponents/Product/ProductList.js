@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 const Product = () => {
   const { cartList } = useSelector((state) => state.cart);
-  console.log(cartList);
   return (
     <section className="container">
       {product.map((product, key) => (
