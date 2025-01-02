@@ -8,7 +8,6 @@ const CartButtons = ({ product }) => {
   const cartCount = useMemo(() => {
     return cartList?.find((item) => item?.id === product?.id)?.count;
   }, [cartList, product?.id]);
-  
   return (
     <>
       {cartCount > 0 ? (
