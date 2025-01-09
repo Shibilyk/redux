@@ -1,4 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
+
+export const fetchUser = createAsyncThunk("cart/fetchUser", async (id) => {
+  const response = await axios.get(
+    `http://jsonplaceholder.typicode.com/todos/${id}`
+  );
+  return response.data;
+});
 
 const initialState = {
   cartList: [],
@@ -35,6 +43,18 @@ const cartSlice = createSlice({
         }
       }
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUser.pending, () => {
+        console.log("loading start");
+      })
+      .addCase(fetchUser.fulfilled, () => {
+        console.log("success");
+      })
+      .addCase(fetchUser.rejected, () => {
+        console.log("rejected");
+      });
   },
 });
 
